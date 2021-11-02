@@ -13,9 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# anfisa/urls.py (главный файл url проекта)
+# По умолчанию в проект Django подключена система администрирования 
 from django.contrib import admin
-from django.urls import path
+# Функция include позволит использовать path() из других файлов.
+# Импортируем!
+from django.urls import include, path 
 
-urlpatterns = [
+urlpatterns = [    
+    # Дорогой Джанго, если запрошена главная страница (''),
+    # перейди в файл urls приложения ice_cream и проверь там все пути
+    path('', include('ice_cream.urls')),
+    # Встроенная админка в Django подключена по этому адресу «из коробки»
     path('admin/', admin.site.urls),
 ]
