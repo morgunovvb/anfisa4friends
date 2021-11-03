@@ -14,5 +14,5 @@ def ice_cream_list(request):
 
 # Страница с информацией об одном сорте мороженого;
 # view-функция принимает параметр pk из path()
-def ice_cream_detail(request, int:pk):
-    return HttpResponse(f'Мороженое номер {int:pk}')
+def ice_cream_detail(request, pk):
+    return HttpResponse(f'Мороженое номер {pk}')
